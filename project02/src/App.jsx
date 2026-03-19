@@ -24,7 +24,7 @@ function App() {
       <MenuBox name="초코라떼" temp={iced} price='5000'></MenuBox>
 
       <hr/>
-         <MemberBox name="김은헤" team={teamName} bloodType='A'></MemberBox>
+         <MemberBox name="김은혜" team={teamName} bloodType='A'></MemberBox>
         <MemberBox name="문병근" team={teamName}bloodType='B'></MemberBox>
         <MemberBox name="임주은" team={teamName}bloodType='B'></MemberBox>
         <MemberBox name="한동한" team={teamName}bloodType='B'></MemberBox>

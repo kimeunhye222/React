@@ -7,11 +7,11 @@ const Ex06 = () => {
 
     let numList =[1,2,3,4,5]
 
-    let oddList = numList.filter(item => item%2 === 1)
-    console.log('oddList',oddList)
+    let evenList = numList.filter(item => item%2 === 0)
+    console.log('evenList',evenList)
 
-     let oddList2 = numList.map(item => item%2 === 1)
-    console.log('oddList',oddList2)
+     let evenList2 = numList.map(item => item%2 === 0)
+    console.log('evenList',evenList2)
 
     let students = [
       {name : '홍길동', age : 20, bloodType : 'A'},

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 
 const Ex03 = () => {
   
@@ -15,18 +15,34 @@ const Ex03 = () => {
     // 다 되신분들은 정답입니다~ 상황을 캡쳐해서 업로드!
         const [ranNum, setRanNum] = useState(0)
         const [myNum, setMyNum] = useState(0)
+        const [count, setCount] = useState(0)
+
+        useEffect(()=>{
+        if(count === 3){
+            alert('목표 도달!')
+        }
+       },[count])
 
 
     const gamestart = (e)=>{
         const random = parseInt(Math.random() * 3) + 1;
-        setRanNum(random);
-
-        setMyNum(parseInt(e.target.innerText));
-
+        const my = parseInt(e.target.innerText);
 
         console.log('게임 시작!')
-        console.log('랜덤 숫자',parseInt(Math.random()*3)+1)
+        console.log('랜덤 숫자', random)
         console.log('내가 누른 숫자는?', e.target.innerText)
+
+        setRanNum(random);
+        setMyNum(my);
+
+         if(random === my){
+            setCount(prev => prev + 1)
+
+       
+        }
+
+       
+         
         
       
     }
@@ -41,6 +57,11 @@ const Ex03 = () => {
         <p>컴퓨터가 입력한 숫자 : {ranNum}</p>
         <h3>
             {myNum == ranNum ? '정답입니다~' : '땡!'}
+            {/* 1. 정답을 맞힐때마다 정답횟수 1증가 
+                2. 정답횟수가 3이 된다면 알림창으로 '목표 도달' 출력 */}
+        </h3>
+        <h3>
+            정답 횟수 : {count}
         </h3>
     </div>
   )
