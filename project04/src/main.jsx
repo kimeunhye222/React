@@ -13,10 +13,12 @@ import App from './example/Ex02.jsx'
 import Home from './example/Home.jsx'
 import About from './example/About.jsx'
 
-// Router : 주소값에 따라서 다른 페이지를 출력하는 기능
+// *Router : 주소값에 따라서 다른 페이지를 출력하는 기능
 import {Route, Routes,BrowserRouter} from 'react-router-dom'
+import Ex02 from './example/Ex02.jsx'
 // Route : 컴포넌트와 주소값을 대응하는 기능
 // Routes : 주소값 관리
+// BrowserRouter : Router 기능을 사용할 수 있게끔 권한을 받아온다
 
 
 createRoot(document.getElementById('root')).render(
@@ -25,7 +27,10 @@ createRoot(document.getElementById('root')).render(
     <Routes>
     <Route path='/'element={ <Home></Home>}></Route>
     <Route path='/about' element={<About></About>}></Route>
+    <Route path='/ex02' element={<Ex02></Ex02>}></Route>
     </Routes>
     </BrowserRouter>
     </div>
+    // ex02라는 주소로 Ex02컴포넌트가 출력되게 만들어주세요
 ,)
+
